@@ -7,7 +7,10 @@
     <!-- cdn links -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- icon -->
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3868/3868862.png">
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/3868/3868862.png"
+    />
     <title>Practice Problem</title>
   </head>
   <body class="bg-green-100">
@@ -39,6 +42,21 @@
     </h2>
     <p
       id="largest"
+      class="text-yellow-500 text-7xl p-5 text-center hover:text-yellow-600 font-bold"
+    ></p>
+
+    <!-- isosceles or not  -->
+    <h2 class="font-semibold text-3xl p-5">
+      Find the Isosceles or not?
+      <button
+        class="hover:bg-yellow-600 text-neutral-50 rounded bg-yellow-500 p-2"
+        onclick="isosceles()"
+      >
+        Input sides
+      </button>
+    </h2>
+    <p
+      id="output"
       class="text-yellow-500 text-7xl p-5 text-center hover:text-yellow-600 font-bold"
     ></p>
     <script>
@@ -77,6 +95,24 @@
 
         document.getElementById("largest").innerHTML =
           "The largest number is " + lg;
+      }
+
+      // isosceles or not
+      function isosceles() {
+        var side1 = parseInt(prompt("Enter the value of side-1: "));
+        var side2 = parseInt(prompt("Enter the value of side-2: "));
+        var side3 = parseInt(prompt("Enter the value of side-3: "));
+        var lg;
+
+        if (side1 == side2 && side1 != side3) {
+          document.getElementById("output").innerHTML = "Isosceles Triangle";
+        } else if (side2 == side3 && side2 != side1) {
+          document.getElementById("output").innerHTML = "Isosceles Triangle";
+        } else if (side1 == side3 && side1 != side2) {
+          document.getElementById("output").innerHTML = "Isosceles Triangle";
+        } else
+          document.getElementById("output").innerHTML =
+            "Not a Isosceles Triangle";
       }
     </script>
   </body>
